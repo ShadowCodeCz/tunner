@@ -232,10 +232,6 @@ class CopierController(object):
         self._load_content_all_tunner_files()
         self._copy()
 
-
-        # self._ids()
-        # self._copy()
-
     def _read_configuration(self, path):
         with open(path) as cfg_file:
             self.cfg = json.load(cfg_file)
@@ -263,33 +259,12 @@ class CopierController(object):
         with open(path) as tf:
             return json.load(tf)
 
-    # def _tunner_ids(self, tunner_paths):
-    #     return {self._tunner_id(path): path for path in tunner_paths}
-    #
-    # def _tunner_id(self, tunner_path):
-    #     with open(tunner_path) as tf:
-    #         content = json.load(tf)
-    #         return content["id"]
-    #
-    # def _source_tunner_ids(self):
-    #     tunner_paths = self._find_all_tunner_files_in_directory(self.cfg["source"])
-    #     self.source_ids = self._tunner_ids(tunner_paths)
-    #
-    # def _destination_tunner_ids(self):
-    #     tunner_paths = self._find_all_tunner_files_in_directory(self.cfg["destination"])
-    #     self.destination_ids = self._tunner_ids(tunner_paths)
-    #
-    # def _ids(self):
-    #     self._source_tunner_ids()
-    #     self._destination_tunner_ids()
-
     def _copy(self):
         for id, tunner_file in self.source_files.items():
             if not id in self.destination_files:
                 source_directory_path = os.path.dirname(tunner_file.path)
                 destination_directory_path = self._evaluate_destination_path(tunner_file)
                 # os.makedirs(destination_directory_path, exist_ok=True)
-                # print("** %s -> %s" % (source_directory_path, destination_directory_path))
                 shutil.copytree(source_directory_path, destination_directory_path)
                 print("%s -> %s" % (source_directory_path, destination_directory_path))
 
@@ -307,8 +282,6 @@ class CopierController(object):
     def _tunner_variable_value(self, name, variables):
         variable = [variable for variable in variables if variable["name"] == name][0]
         return variable["value"]
-
-
 
 
 def main():
