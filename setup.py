@@ -1,7 +1,7 @@
 from setuptools import setup
 
 classifiers = [
-    'Development Status :: 5 - Production/Stable',
+    'Development Status :: 2 - Pre-Alpha',
     'Intended Audience :: Developers',
     'Programming Language :: Python :: 3.6',
     'Programming Language :: Python :: 3.7',
@@ -18,8 +18,11 @@ description = "Test Runner"
 
 setup(
     name='tunner',
-    version='0.1',
+    version='0.2',
     packages=['tunner'],
+    package_data={
+        "tunner": ["configuration/*.json"],
+    },
     url='https://github.com/ShadowCodeCz/tunner',
     project_urls={
         'Source': 'https://github.com/ShadowCodeCz/tunner',

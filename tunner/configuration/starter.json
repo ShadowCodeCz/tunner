@@ -1,0 +1,16 @@
+{
+  "working_directory": "C:\\",
+  "variables": [
+    {
+      "name": "tpid",
+      "value": "A"
+    },
+    {
+      "name": "tester",
+      "value": "john",
+      "checked": "True"
+    }
+  ],
+  "tags": ["tag_1", "tag_2"],
+  "note": ["Line 1", "Line 2"]
+}
