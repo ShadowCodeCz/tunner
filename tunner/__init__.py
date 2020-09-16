@@ -7,6 +7,8 @@ import socket
 import uuid
 import alphabetic_timestamp as ats
 import time
+import glob
+import shutil
 
 try:
     import Tkinter as tk
@@ -28,6 +30,10 @@ class Path(object):
     @classmethod
     def starter_configuration(cls):
         return os.path.join(cls.configuration_directory(), "starter.json")
+
+    @classmethod
+    def copier_configuration(cls):
+        return os.path.join(cls.configuration_directory(), "cp.json")
 
 
 class DataFiller(object):
@@ -149,12 +155,12 @@ class StarterController:
     def run(self, arguments):
         self.root = tk.Tk()
         self.gui = gui.starter.build(self.root)
-        self.read_configuration()
+        self._read_configuration()
         self.data_filler.fill(self.gui, self.cfg)
         self.binder.bind(self.gui, self)
         self.root.mainloop()
 
-    def read_configuration(self):
+    def _read_configuration(self):
         with open(Path.starter_configuration()) as cfg_file:
             self.cfg = json.load(cfg_file)
 
@@ -201,12 +207,108 @@ class StarterController:
         self.gui.button.button["state"] = "normal"
 
 
+class TunnerFileContent:
+    def __init__(self):
+        self.path = None
+        self.content = None
+
+    @property
+    def id(self):
+        return self.content["id"]
+
+
 class CopierController(object):
     def __init__(self):
-        pass
+        self.cfg = None
+        self.source_tunner_file_paths = None
+        self.destination_tunner_files_paths = None
+        # TODO: danger
+        self.source_files = {}
+        self.destination_files = {}
 
     def run(self, arguments):
-        print("aaa")
+        self._read_configuration(arguments.configuration)
+        self._find_all_tunner_files()
+        self._load_content_all_tunner_files()
+        self._copy()
+
+
+        # self._ids()
+        # self._copy()
+
+    def _read_configuration(self, path):
+        with open(path) as cfg_file:
+            self.cfg = json.load(cfg_file)
+
+    def _find_all_tunner_files(self):
+        self.source_tunner_file_paths = self._find_all_tunner_files_in_directory(self.cfg["source"])
+        self.destination_tunner_files_paths = self._find_all_tunner_files_in_directory(self.cfg["destination"])
+
+    def _find_all_tunner_files_in_directory(self, directory):
+        path = os.path.join(directory, "**", ".tunner")
+        return glob.glob(path, recursive=True)
+
+    def _load_content_all_tunner_files(self):
+        self._load_content_tunner_files(self.source_files, self.source_tunner_file_paths)
+        self._load_content_tunner_files(self.destination_files, self.destination_tunner_files_paths)
+
+    def _load_content_tunner_files(self, source_files, tunner_file_paths):
+        for tunner_path in tunner_file_paths:
+            tf = TunnerFileContent()
+            tf.path = tunner_path
+            tf.content = self._read_tunner_file(tunner_path)
+            source_files[tf.id] = tf
+
+    def _read_tunner_file(self, path):
+        with open(path) as tf:
+            return json.load(tf)
+
+    # def _tunner_ids(self, tunner_paths):
+    #     return {self._tunner_id(path): path for path in tunner_paths}
+    #
+    # def _tunner_id(self, tunner_path):
+    #     with open(tunner_path) as tf:
+    #         content = json.load(tf)
+    #         return content["id"]
+    #
+    # def _source_tunner_ids(self):
+    #     tunner_paths = self._find_all_tunner_files_in_directory(self.cfg["source"])
+    #     self.source_ids = self._tunner_ids(tunner_paths)
+    #
+    # def _destination_tunner_ids(self):
+    #     tunner_paths = self._find_all_tunner_files_in_directory(self.cfg["destination"])
+    #     self.destination_ids = self._tunner_ids(tunner_paths)
+    #
+    # def _ids(self):
+    #     self._source_tunner_ids()
+    #     self._destination_tunner_ids()
+
+    def _copy(self):
+        for id, tunner_file in self.source_files.items():
+            if not id in self.destination_files:
+                source_directory_path = os.path.dirname(tunner_file.path)
+                destination_directory_path = self._evaluate_destination_path(tunner_file)
+                # os.makedirs(destination_directory_path, exist_ok=True)
+                # print("** %s -> %s" % (source_directory_path, destination_directory_path))
+                shutil.copytree(source_directory_path, destination_directory_path)
+                print("%s -> %s" % (source_directory_path, destination_directory_path))
+
+    def _evaluate_destination_path(self, tunner_file):
+        path_items = [self.cfg["destination"]]
+        for path_variable in self.cfg["path_items"]:
+            path_item = self._tunner_variable_value(path_variable, tunner_file.content["variables"])
+
+            if path_item.strip() != "":
+                path_items.append(path_item)
+
+        path_items.append(os.path.basename(os.path.dirname(tunner_file.path)))
+        return os.path.join(*path_items)
+
+    def _tunner_variable_value(self, name, variables):
+        variable = [variable for variable in variables if variable["name"] == name][0]
+        return variable["value"]
+
+
 
 
 def main():
@@ -221,6 +323,7 @@ def main():
     starter_parser.set_defaults(func=starter.run)
 
     copier_parser = subparsers.add_parser('cp')
+    copier_parser.add_argument('-c', "--configuration", type=str, default=Path.copier_configuration())
     copier_parser.set_defaults(func=copier.run)
 
     arguments = parser.parse_args()

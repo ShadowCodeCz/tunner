@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 classifiers = [
     'Development Status :: 2 - Pre-Alpha',
@@ -18,8 +18,8 @@ description = "Test Runner"
 
 setup(
     name='tunner',
-    version='0.2.1',
-    packages=['tunner'],
+    version='0.2.2',
+    packages=find_packages(),
     package_data={
         "tunner": ["configuration/*.json"],
     },
@@ -35,5 +35,10 @@ setup(
     long_description_content_type='text/markdown',
     classifiers=classifiers,
     keywords='test runner',
-    install_requires=[]
+    install_requires=["alphabetic-timestamp"],
+    entry_points={
+        'console_scripts': [
+            'tunner=tunner:main',
+        ]
+    }
 )

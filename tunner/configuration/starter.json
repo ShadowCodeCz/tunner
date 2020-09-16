@@ -1,13 +1,18 @@
 {
-  "working_directory": "C:\\",
+  "working_directory": "C:\\tpid\\subcase\\%Y%b%d-%H%M%S",
   "variables": [
     {
-      "name": "tpid",
-      "value": "A"
+      "name": "tester",
+      "value": "MrX"
     },
     {
-      "name": "tester",
-      "value": "john",
+      "name": "tpid",
+      "value": "0",
+      "checked": "True"
+    },
+    {
+      "name": "subcase",
+      "value": "1",
       "checked": "True"
     }
   ],
