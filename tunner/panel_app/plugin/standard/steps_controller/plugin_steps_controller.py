@@ -156,6 +156,7 @@ class CommentAdder(TunnerSubscriber):
     def update(self, notification):
 
         comment = {
+            "step": self.tunner.data["step"],
             "type": self.gui_items["dialog"]["type_option"].option_variable.get(),
             "column": self.gui_items["dialog"]["column_option"].option_variable.get(),
             "text": self.gui_items["dialog"]["note"].text.get(1.0, tk.END).split("\n")
