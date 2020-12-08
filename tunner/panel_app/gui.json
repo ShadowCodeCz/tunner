@@ -1,0 +1,8 @@
+{
+  "top_panel": 1,
+  "configure": {
+    "bg": "#434343",
+    "highlightthickness": 1,
+    "highlightbackground": "gray"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "plugin" : {
+    "frame": {
+      "grid": {"row": 0, "column": 22, "sticky": "nsew", "padx": [1, 1], "pady": [1, 1]},
+      "configure": {
+        "bg": "#434343",
+        "highlightthickness": 1,
+        "highlightbackground": "gray"
+      }
+    },
+    "button" : {
+      "grid": {"row": 0, "column": 0, "sticky": "nsew"},
+      "configure": {
+        "bg": "#434343",
+        "text": "End Test Run",
+        "font": "Helvetica 9 bold",
+        "fg": "white",
+        "relief": "flat"
+      }
+    }
+  },
+  "dialog": {
+    "frame": {
+      "grid": {"row": 0, "column": 0, "sticky": "nsew"},
+      "configure": {
+        "bg": "#434343",
+        "highlightthickness": 1,
+        "highlightbackground": "dodger blue"
+      }
+    },
+    "option": {
+      "grid": {"row": 0, "column": 0, "sticky": "nsew"},
+      "configure": {
+        "bg": "#434343"
+      },
+      "label": {
+        "text": "Status",
+        "grid": {"row": 0, "column": 0, "sticky": "EW"},
+        "configure": {
+          "width": 20,
+          "anchor": "w",
+          "bg": "#434343",
+          "fg": "#E9E9E9",
+          "font": "Helvetica 9"
+        }
+      },
+      "option_menu": {
+        "options_list": ["Pass", "Pass With Red Lines", "Pass With Red Lines [TR]", "Pass With Red Lines [TP]", "Fail", "Undefined"],
+        "grid": {"row": 0, "column": 1, "sticky": "EW"},
+        "configure": {
+          "anchor": "w",
+          "bg": "#434343",
+          "fg": "#E9E9E9",
+          "font": "Helvetica 9"
+
+        }
+      }
+    },
+    "note": {
+        "grid": {"row": 1, "column": 0, "sticky": "WE", "pady": [0, 4]},
+        "configure": {
+            "bg": "#434343"
+        },
+        "label": {
+            "text": "Note",
+            "grid": {"row": 0, "column": 0, "sticky": "EW"},
+            "configure": {
+               "width": 20,
+                "anchor": "w",
+                "bg": "#434343",
+                "fg": "#E9E9E9",
+                "font": "Helvetica 9"
+
+            }
+        },
+        "text": {
+            "grid": {"row": 0, "column": 1, "sticky": "WE"},
+            "configure": {
+                "highlightthickness": "2",
+                "highlightbackground": "#535353",
+                "relief": "flat",
+                "bg": "#393939",
+                "fg": "#E9E9E9",
+                "font": "Helvetica 9",
+                "insertbackground": "#E9E9E9",
+                "height": 30
+            }
+        }
+    },
+    "button_end_test_run": {
+      "grid": {"row": 2, "column": 0, "sticky": "WE"},
+      "configure": {
+        "bg": "#434343",
+        "text": "End Test Run",
+        "font": "Helvetica 9 bold",
+        "fg": "white",
+        "relief": "groove"
+      }
+    }
+  }
+}

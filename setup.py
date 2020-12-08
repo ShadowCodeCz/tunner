@@ -18,10 +18,11 @@ description = "Test Runner"
 
 setup(
     name='tunner',
-    version='0.2.3',
+    version='0.3.0',
     packages=find_packages(),
+    # TODO: fix
     package_data={
-        "tunner": ["configuration/*.json"],
+        "tunner": [],
     },
     url='https://github.com/ShadowCodeCz/tunner',
     project_urls={
@@ -35,10 +36,10 @@ setup(
     long_description_content_type='text/markdown',
     classifiers=classifiers,
     keywords='test runner',
-    install_requires=["alphabetic-timestamp"],
+    install_requires=["alphabetic-timestamp", "Pillow", "generic_design_patterns", "yapsy"],
     entry_points={
         'console_scripts': [
-            'tunner=tunner:main',
+            'tunner=tunner.panel_app:run',
         ]
     }
 )

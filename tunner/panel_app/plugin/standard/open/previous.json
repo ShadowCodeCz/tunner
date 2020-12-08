@@ -1,0 +1,64 @@
+{
+    "variables": [
+        {
+            "name": "tester",
+            "value": "John"
+        },
+        {
+            "name": "test.id",
+            "value": "0"
+        },
+        {
+            "name": "test.type",
+            "value": "run"
+        },
+        {
+            "name": "test.modification",
+            "value": "original"
+        },
+        {
+            "name": "story",
+            "value": "investigation"
+        },
+        {
+            "name": "",
+            "value": ""
+        },
+        {
+            "name": "",
+            "value": ""
+        },
+        {
+            "name": "",
+            "value": ""
+        },
+        {
+            "name": "",
+            "value": ""
+        },
+        {
+            "name": "",
+            "value": ""
+        },
+        {
+            "name": "",
+            "value": ""
+        },
+        {
+            "name": "",
+            "value": ""
+        },
+        {
+            "name": "",
+            "value": ""
+        },
+        {
+            "name": "",
+            "value": ""
+        },
+        {
+            "name": "tags",
+            "value": ""
+        }
+    ]
+}

@@ -1,0 +1,150 @@
+{
+  "plugin" : {
+    "frame": {
+      "grid": {"row": 0, "column": 7, "sticky": "nsew", "padx": [1, 1], "pady": [1, 1]},
+      "configure": {
+        "bg": "#434343",
+        "highlightthickness": 1,
+        "highlightbackground": "gray"
+      }
+    },
+    "previous_button" : {
+      "grid": {"row": 0, "column": 0, "sticky": "nsew"},
+      "configure": {
+        "bg": "#434343",
+        "text": "<",
+        "font": "Helvetica 9 bold",
+        "fg": "white",
+        "relief": "flat"
+      }
+    },
+    "step_number_button": {
+      "grid": {"row": 0, "column": 1, "sticky": "nsew"},
+      "configure": {
+        "bg": "#434343",
+        "text": "",
+        "font": "Helvetica 9 bold",
+        "fg": "white",
+        "relief": "flat",
+        "width": 17
+      }
+    },
+    "next_button" : {
+      "grid": {"row": 0, "column": 2, "sticky": "nsew"},
+      "configure": {
+        "bg": "#434343",
+        "text": ">",
+        "font": "Helvetica 9 bold",
+        "fg": "white",
+        "relief": "flat"
+      }
+    }
+  },
+  "dialog": {
+    "frame": {
+      "grid": {"row": 0, "column": 0, "sticky": "nsew"},
+      "configure": {
+        "bg": "#434343",
+        "highlightthickness": 1,
+        "highlightbackground": "dodger blue"
+      }
+    },
+    "type_option": {
+      "grid": {"row": 0, "column": 0, "sticky": "nsew"},
+      "configure": {
+        "bg": "#434343"
+      },
+      "label": {
+        "text": "Type",
+        "grid": {"row": 0, "column": 0, "sticky": "EW"},
+        "configure": {
+          "width": 20,
+          "anchor": "w",
+          "bg": "#434343",
+          "fg": "#E9E9E9",
+          "font": "Helvetica 9"
+        }
+      },
+      "option_menu": {
+        "options_list": ["Red Line", "Red Line [TP]", "Red Line [TR]", "Observation", "Improvement", "Undefined"],
+        "grid": {"row": 0, "column": 1, "sticky": "EW"},
+        "configure": {
+          "anchor": "w",
+          "bg": "#434343",
+          "fg": "#E9E9E9",
+          "font": "Helvetica 9"
+
+        }
+      }
+    },
+    "column_option": {
+      "grid": {"row": 1, "column": 0, "sticky": "nsew"},
+      "configure": {
+        "bg": "#434343"
+      },
+      "label": {
+        "text": "Column",
+        "grid": {"row": 0, "column": 0, "sticky": "EW"},
+        "configure": {
+          "width": 20,
+          "anchor": "w",
+          "bg": "#434343",
+          "fg": "#E9E9E9",
+          "font": "Helvetica 9"
+        }
+      },
+      "option_menu": {
+        "options_list": ["All"],
+        "grid": {"row": 0, "column": 1, "sticky": "EW"},
+        "configure": {
+          "anchor": "w",
+          "bg": "#434343",
+          "fg": "#E9E9E9",
+          "font": "Helvetica 9"
+
+        }
+      }
+    },
+    "note": {
+        "grid": {"row": 2, "column": 0, "sticky": "WE", "pady": [0, 4]},
+        "configure": {
+            "bg": "#434343"
+        },
+        "label": {
+            "text": "Note",
+            "grid": {"row": 0, "column": 0, "sticky": "EW"},
+            "configure": {
+               "width": 20,
+                "anchor": "w",
+                "bg": "#434343",
+                "fg": "#E9E9E9",
+                "font": "Helvetica 9"
+
+            }
+        },
+        "text": {
+            "grid": {"row": 0, "column": 1, "sticky": "WE"},
+            "configure": {
+                "highlightthickness": "2",
+                "highlightbackground": "#535353",
+                "relief": "flat",
+                "bg": "#393939",
+                "fg": "#E9E9E9",
+                "font": "Helvetica 9",
+                "insertbackground": "#E9E9E9",
+                "height": 30
+            }
+        }
+    },
+    "button_comment": {
+      "grid": {"row": 3, "column": 0, "sticky": "WE"},
+      "configure": {
+        "bg": "#434343",
+        "text": "Comment",
+        "font": "Helvetica 9 bold",
+        "fg": "white",
+        "relief": "groove"
+      }
+    }
+  }
+}

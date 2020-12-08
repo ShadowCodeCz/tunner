@@ -1,0 +1,71 @@
+{
+  "plugin" : {
+    "frame": {
+      "grid": {"row": 0, "column": 1, "sticky": "nsew", "padx": [1, 1], "pady": [1, 1]},
+      "configure": {
+        "bg": "#434343",
+        "highlightthickness": 1,
+        "highlightbackground": "gray"
+      }
+    },
+    "button" : {
+      "grid": {"row": 0, "column": 0, "sticky": "nsew"},
+      "configure": {
+        "bg": "#434343",
+        "text": "Variables",
+        "font": "Helvetica 9 bold",
+        "fg": "white",
+        "relief": "flat"
+      }
+    }
+  },
+  "dialog": {
+    "frame": {
+      "grid": {"row": 0, "column": 0, "sticky": "nsew"},
+      "configure": {
+        "bg": "#434343",
+        "highlightthickness": 1,
+        "highlightbackground": "dodger blue"
+      }
+    },
+    "variable": {
+      "grid": {"row": 0, "column": 0, "stick": "WE", "pady": [0, 4]},
+      "configure": {"bg": "#434343"},
+      "label": {
+        "text": "",
+        "grid": {"row": 0, "column": 0, "sticky": "W"},
+        "configure": {
+          "width": 11,
+          "anchor": "w",
+          "bg": "#434343",
+          "fg": "#E9E9E9",
+          "font": "Helvetica 9"
+        }
+      },
+      "variable": {
+        "grid": {"row": 0, "column": 1, "padx": [0, 6], "sticky": "EW"},
+        "configure": {
+          "highlightthickness": "2",
+          "highlightbackground": "#535353",
+          "relief": "flat",
+          "bg": "#393939",
+          "fg": "#E9E9E9",
+          "font": "Helvetica 9",
+          "insertbackground": "#E9E9E9"
+        }
+      },
+      "value": {
+        "grid": {"row": 0, "column": 2, "sticky": "EW"},
+        "configure": {
+          "highlightthickness": "2",
+          "highlightbackground": "#535353",
+          "relief": "flat",
+          "bg": "#393939",
+          "fg": "#E9E9E9",
+          "font": "Helvetica 9",
+          "insertbackground": "#E9E9E9"
+        }
+      }
+    }
+  }
+}

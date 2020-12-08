@@ -1,0 +1,23 @@
+{
+  "top_panel": 1,
+  "plugin" : {
+    "frame": {
+      "grid": {"row": 0, "column": 0, "sticky": "nsew", "padx": [1, 1], "pady": [1, 1]},
+      "configure": {
+        "bg": "#434343",
+        "highlightthickness": 1,
+        "highlightbackground": "gray"
+      }
+    },
+    "button" : {
+      "grid": {"row": 0, "column": 0, "sticky": "nsew"},
+      "configure": {
+        "bg": "#434343",
+        "text": "T",
+        "font": "Helvetica 9 bold",
+        "fg": "white",
+        "relief": "flat"
+      }
+    }
+  }
+}

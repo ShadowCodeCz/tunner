@@ -1,0 +1,45 @@
+{
+  "plugin" : {
+    "frame": {
+      "grid": {"row": 0, "column": 8, "sticky": "nsew", "padx": [1, 1], "pady": [1, 1]},
+      "configure": {
+        "bg": "#434343",
+        "highlightthickness": 1,
+        "highlightbackground": "gray"
+      }
+    },
+    "button" : {
+      "grid": {"row": 0, "column": 0, "sticky": "nsew"},
+      "configure": {
+        "bg": "#434343",
+        "text": "Print Screen",
+        "font": "Helvetica 9 bold",
+        "fg": "white",
+        "relief": "flat"
+      }
+    },
+    "entry": {
+        "grid": {"row": 0, "column": 1, "padx": [1, 2], "sticky": "EW"},
+        "configure": {
+          "highlightthickness": "1",
+          "highlightbackground": "#535353",
+          "relief": "flat",
+          "bg": "#393939",
+          "fg": "#E9E9E9",
+          "font": "Helvetica 9",
+          "insertbackground": "#E9E9E9",
+          "disabledbackground": "#393939"
+        }
+    }
+  },
+  "dialog": {
+    "frame": {
+      "grid": {"row": 0, "column": 0, "sticky": "nsew"},
+      "configure": {
+        "bg": "#434343",
+        "highlightthickness": 1,
+        "highlightbackground": "dodger blue"
+      }
+    }
+  }
+}

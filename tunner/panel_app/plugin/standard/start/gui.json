@@ -1,0 +1,69 @@
+{
+  "plugin" : {
+    "frame": {
+      "grid": {"row": 0, "column": 0, "sticky": "nsew", "padx": [1, 1], "pady": [1, 1]},
+      "configure": {
+        "bg": "#434343",
+        "highlightthickness": 1,
+        "highlightbackground": "gray"
+      }
+    },
+    "button" : {
+      "grid": {"row": 0, "column": 0, "sticky": "nsew"},
+      "configure": {
+        "bg": "#434343",
+        "text": "Start Test Run",
+        "font": "Helvetica 9 bold",
+        "fg": "white",
+        "relief": "flat"
+      }
+    }
+  },
+  "dialog": {
+    "frame": {
+      "grid": {"row": 0, "column": 0, "sticky": "nsew"},
+      "configure": {
+        "bg": "#434343",
+        "highlightthickness": 1,
+        "highlightbackground": "dodger blue"
+      }
+    },
+    "directory_entry": {
+      "grid": {"row": 0, "column": 0, "sticky": "EW", "pady": [4, 4]},
+      "configure": {"bg": "#434343"},
+      "label": {
+        "text": "Evidence directory template",
+        "grid": {"row": 0, "column": 0, "sticky": "WE"},
+        "configure": {
+          "width": 25,
+          "anchor": "w",
+          "bg": "#434343",
+          "fg": "#E9E9E9",
+          "font": "Helvetica 9"
+        }
+      },
+      "entry": {
+        "grid": {"row": 0, "column": 1, "sticky": "WE"},
+        "configure": {
+          "highlightthickness": "2",
+          "highlightbackground": "#535353",
+          "relief": "flat",
+          "bg": "#393939",
+          "fg": "#E9E9E9",
+          "font": "Helvetica 9",
+          "insertbackground": "#E9E9E9"
+        }
+      }
+    },
+    "button_start_test_run": {
+      "grid": {"row": 0, "column": 1, "sticky": "E"},
+      "configure": {
+        "bg": "#434343",
+        "text": "Start Test Run",
+        "font": "Helvetica 9 bold",
+        "fg": "white",
+        "relief": "groove"
+      }
+    }
+  }
+}

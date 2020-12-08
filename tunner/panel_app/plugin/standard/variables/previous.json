@@ -1,0 +1,64 @@
+{
+    "variables": [
+        {
+            "name": "project",
+            "value": ""
+        },
+        {
+            "name": "tester.name",
+            "value": ""
+        },
+        {
+            "name": "test.id",
+            "value": ""
+        },
+        {
+            "name": "test.title",
+            "value": ""
+        },
+        {
+            "name": "test.type",
+            "value": "pre/run"
+        },
+        {
+            "name": "test.modification",
+            "value": ""
+        },
+        {
+            "name": "story",
+            "value": ""
+        },
+        {
+            "name": "",
+            "value": ""
+        },
+        {
+            "name": "",
+            "value": ""
+        },
+        {
+            "name": "",
+            "value": ""
+        },
+        {
+            "name": "",
+            "value": ""
+        },
+        {
+            "name": "",
+            "value": ""
+        },
+        {
+            "name": "",
+            "value": ""
+        },
+        {
+            "name": "",
+            "value": ""
+        },
+        {
+            "name": "tags",
+            "value": ""
+        }
+    ]
+}

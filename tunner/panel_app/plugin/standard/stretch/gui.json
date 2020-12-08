@@ -1,0 +1,12 @@
+{
+  "plugin" : {
+    "frame": {
+      "grid": {"row": 0, "column": 21, "sticky": "nsew", "padx": [1, 1], "pady": [1, 1]},
+      "configure": {
+        "bg": "#434343",
+        "highlightthickness": 0,
+        "highlightbackground": "gray"
+      }
+    }
+  }
+}
