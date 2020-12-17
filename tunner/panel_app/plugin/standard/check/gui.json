@@ -1,0 +1,100 @@
+{
+  "plugin" : {
+    "frame": {
+      "grid": {"row": 0, "column": 9, "sticky": "nsew", "padx": [1, 1], "pady": [1, 1]},
+      "configure": {
+        "bg": "#434343",
+        "highlightthickness": 1,
+        "highlightbackground": "gray"
+      }
+    },
+    "button" : {
+      "grid": {"row": 0, "column": 0, "sticky": "nsew"},
+      "configure": {
+        "bg": "#434343",
+        "text": "Check",
+        "font": "Helvetica 9 bold",
+        "fg": "white",
+        "relief": "flat"
+      }
+    }
+  },
+  "dialog": {
+    "frame": {
+      "grid": {"row": 0, "column": 0, "sticky": "nsew"},
+      "configure": {
+        "bg": "#434343",
+        "highlightthickness": 1,
+        "highlightbackground": "dodger blue"
+      }
+    },
+    "flexet_cfg_entry": {
+      "grid": {"row": 0, "column": 0, "sticky": "EW", "pady": [4, 4]},
+      "configure": {"bg": "#434343"},
+      "label": {
+        "text": "Flexet configuration",
+        "grid": {"row": 0, "column": 0, "sticky": "WE"},
+        "configure": {
+          "width": 25,
+          "anchor": "w",
+          "bg": "#434343",
+          "fg": "#E9E9E9",
+          "font": "Helvetica 9"
+        }
+      },
+      "entry": {
+        "grid": {"row": 0, "column": 1, "sticky": "WE"},
+        "configure": {
+          "highlightthickness": "2",
+          "highlightbackground": "#535353",
+          "relief": "flat",
+          "bg": "#393939",
+          "fg": "#E9E9E9",
+          "font": "Helvetica 9",
+          "insertbackground": "#E9E9E9"
+        }
+      }
+    },
+    "listbox": {
+        "grid": {"row": 1, "column": 0, "sticky": "WE", "pady": [0, 4]},
+        "configure": {
+            "bg": "#434343"
+        },
+        "label": {
+            "text": "Results",
+            "grid": {"row": 0, "column": 0, "sticky": "EW"},
+            "configure": {
+               "width": 25,
+                "anchor": "w",
+                "bg": "#434343",
+                "fg": "#E9E9E9",
+                "font": "Helvetica 9"
+
+            }
+        },
+        "listbox": {
+            "grid": {"row": 0, "column": 1, "sticky": "WE"},
+            "configure": {
+                "highlightthickness": "2",
+                "highlightbackground": "#535353",
+                "relief": "flat",
+                "bg": "#393939",
+                "fg": "#E9E9E9",
+                "font": "Helvetica 10 bold",
+                "height": 30
+            }
+        }
+    },
+    "button_start_check": {
+      "grid": {"row": 2, "column": 0, "sticky": "WE"},
+      "configure": {
+        "bg": "#434343",
+        "text": "Check",
+        "font": "Helvetica 9 bold",
+        "fg": "white",
+        "relief": "groove"
+      }
+    }
+  }
+}
+

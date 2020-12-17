@@ -18,11 +18,11 @@ description = "Test Runner"
 
 setup(
     name='tunner',
-    version='0.3.1',
+    version='0.3.2',
     packages=find_packages(),
     # TODO: fix
     package_data={
-        "tunner": [],
+        "tunner": ['*', '*/*', '*/*/*', '*/*/*/*'],
     },
     url='https://github.com/ShadowCodeCz/tunner',
     project_urls={

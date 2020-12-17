@@ -29,7 +29,6 @@ class Message:
     unsubscribed_message = "unsubscribed.message"
 
 
-
 class TunnerSubscriber(gdp.event.AdvancedSubscriber):
     subscription_messages = []
 

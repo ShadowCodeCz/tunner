@@ -150,6 +150,7 @@ class PrintScreenMaker(TunnerSubscriber):
         snapshot.save(path)
 
         self.gui_items["entry"].delete(0, 'end')
+        self.tunner.data["print.screen.suffix"] = ""
 
 
 class PanelAdder(TunnerSubscriber):
